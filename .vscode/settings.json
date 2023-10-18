@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "빛섞어.C": "cpp",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "입출력.C": "cpp"
     }
 }
