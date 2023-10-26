@@ -37,31 +37,28 @@ int main()
 
     clrscr();
 
-    if(completed == 0){
-        
-        MoveStar(1, 10, 50, 1, 20);
-        MoveStar(50, 10, 1, 1, 20);  // 위에랑 위치 바꾸면 거꾸로 시작함
-        gotoxy(1, screen_height);
-        printf("Bye!\n");
-     } else {
-        gotoxy(1, screen_height);
-        printf("Press CTRL-C to quit.");
+if(completed == 0){
+    MoveStar(1, 10, 50, 1, 20);
+    MoveStar(50, 10, 1, 1, 20);
+    gotoxy(1, screen_height);
+    printf("Bye!\n");
+ } else {
+    gotoxy(1, screen_height);
+    printf("Press CTRL-C to quit.");
 
-        char mesg[256] = "You are the masterpiece of God!";
-        int len = strlen(mesg);
-        gotoxy((screen_width - len) / 2, screen_height / 2);
-        printf("%s", mesg);
+    char mesg[256] = "You are the masterpiece of God!";
+    int len = strlen(mesg);
+    gotoxy((screen_width - len) / 2, screen_height / 2);
+    printf("%s", mesg);
 
-        int x[5] = { screen_width / 4,  screen_width * 3 / 4, screen_width * 3 / 4,  screen_width / 4,      screen_width / 4};
-        int y[5] = { screen_height / 4, screen_height / 4,    screen_height * 3 / 4, screen_height * 3 / 4, screen_height / 4};
+    int x[4] = { screen_width / 4, screen_width * 3 / 4, screen_width / 2, screen_width / 4};
+    int y[4] = { screen_height * 3 / 4, screen_height * 3 / 4, screen_height / 4, screen_height * 3 / 4};
 
-        for(int i = 0; 1; i = (i + 1) % 4){
-            if(i % 2 == 0)
-                MoveStar(x[i], y[i], x[i+1], y[i+1], 10);
-            else
-                MoveStar(x[i], y[i], x[i+1], y[i+1], 20);
-        }
+    for(int i = 0; 1; i = (i + 1) % 3){ //i = 0; 1;무한반복
+        MoveStar(x[i], y[i], x[i+1], y[i+1], 20);
     }
+}
+
 
     return 0;
 }

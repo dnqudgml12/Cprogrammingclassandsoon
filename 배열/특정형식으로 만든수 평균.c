@@ -31,7 +31,7 @@ int main(){
 
  
     for(int i=0;i<n;i++){
-        average +=float)math[i] / max * 100;
+        average +=(float)math[i] / max * 100;
     }
    
 

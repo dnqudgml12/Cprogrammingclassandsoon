@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+#include <limits.h>
+int main(){
+    char S[20]=" ";
+    scanf("%s",S); // 문자열이니까 &안해도 됨
+    int len=0;
+    len=strlen(S);
+    int math[len];
+    S[len]='\0';
+    for(int i=0;i<len;i++){
+        math[i]=0;
+    }
+    for(int i=0;i<len;i++){
+        math[i]=S[i]-'0'; // 문자열 정수로, +'0'은 정수 문자열로
+    }  // 이 단계에서 이미 math는 for문으로 만들어졌음
+    
+    int max=INT_MIN;
+    int min=INT_MAX;
+    for(int i=0;i<len;i++){
+        if(math[i]>max){
+            max=math[i];
+        }else if(math[i]<min){
+            min=math[i];
+        }
+    }
+
+    printf("%d\n",max);
+    printf("%d",min);
+
+    return 0;
+
+}
+//근데 이거는 숫자가 한자리수내에서만 가능

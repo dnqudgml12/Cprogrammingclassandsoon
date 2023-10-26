@@ -3,7 +3,7 @@
 
 int main(){
 
-    int num =6;
+    int num =7;
 
 
 

@@ -28,7 +28,7 @@ int main()
 
     clrscr();                   // clear screen
 while(1){
-    LeftToRight(screen_width * 2 / 5, screen_width * 3 / 5, screen_height / 2);
+   //LeftToRight(screen_width * 2 / 5, screen_width * 3 / 5, screen_height / 2);
     
     RighttoLeft(screen_width * 2 / 5, screen_width * 3 / 5, screen_height / 2);}
 /*
@@ -80,12 +80,14 @@ void LeftToRight(int x1, int x2, int y)
         // save the previous coordinate
         prevx = x;
         gotoxy(1, screen_height);   // place the cursor to prevent blicking
-
+        putchar(' ');
         fflush(stdout);             // flush contents to display on the screen
 
         // wait for 50 msec.
         MySleep(25);
     }
+    gotoxy(x2, y); // 이러니까 끝에서 사라짐 내가 넣은거임
+    putchar(' ');
 }
 
 
@@ -104,14 +106,19 @@ void RighttoLeft(int x1, int x2, int y)
         // draw a new '*' at the new coordinate
         gotoxy(x, y);
         putchar('*');
+        
 
         // save the previous coordinate
         prevx = x;
         gotoxy(1, screen_height);   // place the cursor to prevent blicking
 
         fflush(stdout);             // flush contents to display on the screen
-
+        
         // wait for 50 msec.
         MySleep(25);
     }
+
+    gotoxy(x1, y);// 이러니까 끝에서 사라짐 내가 넣은거임
+    putchar(' ');
+    
 }

@@ -3,7 +3,7 @@
 
  long factorial(int n);
 int main(){
-    int a=0;
+    int a=0;  //한줄에 길게 숫자입력하는거면 int해도 됨 숫자배열 안해도됨
     scanf("%d",&a);
 
 
